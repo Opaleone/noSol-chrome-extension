@@ -1,0 +1,13 @@
+{
+  "name": "noSol",
+  "version": "0.1.0",
+  "description": "This extension removes the solutions tab in LeetCode until timer is complete.",
+  "manifest_version": 3,
+  "default_locale": "en",
+  "author": "Lvarando@gmail.com",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ]
+}
