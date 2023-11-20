@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "This extension removes the solutions tab in LeetCode until timer is complete.",
   "manifest_version": 3,
-  "author": "Lvarando@gmail.com",
+  "author": "lvarando@gmail.com",
   "permissions": [
     "activeTab",
     "storage",
@@ -12,7 +12,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://leetcode.com/*"
+        "https://leetcode.com/*/description/"
       ],
       "js": [
         "/scripts/content.js"
