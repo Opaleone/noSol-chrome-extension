@@ -12,7 +12,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://leetcode.com/*/description/"
+        "https://leetcode.com/problems/*"
       ],
       "js": [
         "/scripts/content.js"
@@ -25,5 +25,8 @@
   },
   "options_ui": {
     "page": "options/options.html"
+  },
+  "background": {
+    "service_worker": "/scripts/background.js"
   }
 }
