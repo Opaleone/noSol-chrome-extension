@@ -1,6 +1,11 @@
 body {
-  background-color: #888;
-  color: #222;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: solid 5px #ffa015;
+  margin: 0;
+  padding: 0;
+  height: 150px;
+  width: 300px;
 }
 
 .hide {
@@ -67,4 +72,24 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+#title {
+  text-align: center;
+  font-style: italic;
+}
+
+#title-right {
+  color: #ffa015;
+}
+
+#popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+}
+
+#popup-title {
+  margin-right: 2em;
 }
