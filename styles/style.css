@@ -1,11 +1,18 @@
+:root {
+  --orange: #ffa015;
+  --dark: #2a2a2a;
+  --white: #fff;
+}
+
 body {
-  background-color: #1a1a1a;
-  color: #fff;
-  border: solid 5px #ffa015;
+  background-color: var(--dark);
+  color: var(--white);
+  border: solid 5px var(--orange);
   margin: 0;
   padding: 0;
   height: 150px;
   width: 300px;
+  user-select: none;
 }
 
 .hide {
@@ -52,11 +59,11 @@ body {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: var(--orange);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px var(--orange);
 }
 
 input:checked + .slider:before {
@@ -80,7 +87,7 @@ input:checked + .slider:before {
 }
 
 #title-right {
-  color: #ffa015;
+  color: var(--orange);
 }
 
 #popup {
