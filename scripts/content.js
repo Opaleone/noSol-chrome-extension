@@ -1,14 +1,11 @@
-const toggle = document.body.querySelector('.slider');
+(async () => {
+  const { getUrl } = await chrome.runtime.sendMessage({ greeting: "url"});
 
-chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-  let url = tabs[0].url;
-  const siteMatch = /https:\/\/leetcode\.com\/problems\/([a-z-/]{1,256})/gi
+  console.log(getUrl);
 
-  if (url.match(siteMatch)) {
-    console.log(true)
-  } else console.log(false)
-});
+  const toggle = document.body.querySelector('.slider');
 
-toggle.addEventListener('click', () => {
-  console.log('ding');
-})
+  toggle.addEventListener('click', () => {
+    console.log('the queen is gone');
+  })
+})();
