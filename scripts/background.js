@@ -1,12 +1,6 @@
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.greeting === 'url') {
-    getUrl();
+    console.dir(message);
+    sendResponse({ message: "Received!" })
   }
 })
-
-const getUrl = () => {
-  chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-    let resUrl = tabs[0].url;
-    console.log(resUrl);
-  });
-}
