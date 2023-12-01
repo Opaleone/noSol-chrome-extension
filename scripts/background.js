@@ -1,6 +1,8 @@
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.greeting === "Hello") {
-    console.dir(message);
-    sendResponse({ message: "Received!" })
-  }
+chrome.tabs.onUpdated.addListener((tabId, tab) => {
+  let urlReg = /(http|https):\/\/leetcode.com\/problems\/[a-z-/]{1,256}/gi
+
+  console.log(typeof(tab.url));
+
+  // if (tab.url && tab.url.includes(urlReg)) {
+  // }
 })
