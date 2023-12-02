@@ -1,8 +1,11 @@
-chrome.tabs.onUpdated.addListener((tabId, tab) => {
-  let urlReg = /(http|https):\/\/leetcode.com\/problems\/[a-z-/]{1,256}/gi
+chrome.runtime.onMessage.addListener((req, sender, sendRes) => {
+  if (req.greeting === 'Hello') {
+    chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+      const activeTab = tabs[0];
+      const tabUrl = activeTab.url;
 
-  console.log(typeof(tab.url));
-
-  // if (tab.url && tab.url.includes(urlReg)) {
-  // }
+      console.log(tabUrl);
+      sendRes({ farewell: 'Goodbye' })
+    })
+  }
 })
