@@ -1,3 +1,3 @@
 (async () => {
-  // let getUrl = await chrome.runtime.sendMessage({ greeting: "url"});
+  let getUrl = await chrome.runtime.sendMessage({ greeting: "Hello"});
 })();

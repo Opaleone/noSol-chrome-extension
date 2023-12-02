@@ -1,6 +1,5 @@
 const toggle = document.body.querySelector('.slider');
 
-toggle.addEventListener('click', () => {
-  const response = chrome.runtime.sendMessage({ greeting: "Hello" });
-  console.log(response);
+toggle.addEventListener('click', async () => {
+  const response = await chrome.runtime.sendMessage({ greeting: "Hello" });
 })
