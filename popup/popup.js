@@ -5,7 +5,8 @@ const urlReg = /(http|https):\/\/leetcode.com\/problems\/[a-z-/]{1,256}/gi
 
 chrome.runtime.onMessage.addListener((req, sender, sendRes) => {
   if (req.greeting === 'Hello') {
-    response = req.url;
+    if (req.url.match(urlReg)) response = true;
+    else response = false;
     sendRes({ farewell: 'Goodbye'})
   }
 })
