@@ -10,6 +10,6 @@ const sendUrl = () => {
     const activeTab = tabs[0];
     const tabUrl = activeTab.url;
 
-    chrome.runtime.sendMessage({ greeting: 'Hello', url: tabUrl })
+    chrome.runtime.sendMessage({ url: tabUrl })
   })
 }
