@@ -18,7 +18,17 @@
   setTimeout(() => {
     console.log(response);
   }, 1000);
-    
-  solutionsTab = document.body.querySelector("[data-layout-path='/ts0/tb2']");
-  console.log(solutionsTab);
+
+  const myMain = (e) => {
+    console.log('ding');
+    let jsInitCheckTimer = setInterval(checkForSol, 10)
+
+    if (typeof solutionsTab !== 'undefined' || document.body.querySelector("[data-layout-path='/ts0/tb2']")) {
+      clearInterval(jsInitCheckTimer);
+      solutionsTab = document.body.querySelector("[data-layout-path='/ts0/tb2']");
+      console.log(solutionsTab);
+    }
+  }
+
+  window.addEventListener("load", myMain, false);
 })();
