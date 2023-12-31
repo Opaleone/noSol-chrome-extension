@@ -22,8 +22,5 @@
   "action": {
     "default_popup": "popup/popup.html"
   },
-  "options_page": "options/options.html",
-  "background": {
-    "service_worker": "/scripts/background.js"
-  }
+  "options_page": "options/options.html"
 }
