@@ -1,5 +1,11 @@
 (async () => {
-  console.log('dong');
+  chrome.storage.sync.set({ "toggleStore": true }, () => {
+    console.log('Settings Saved!');
+  })
+  let storeToggle;
+  chrome.storage.sync.get(['toggleStore'], (res) => {
+    storeToggle = res.toggleStore;
+  })
   let solutionsTab;
 
   const myMain = (e) => {
@@ -8,8 +14,6 @@
       if (typeof solutionsTab !== 'undefined' || document.body.querySelector("[data-layout-path='/ts0/tb2']")) {
         clearInterval(jsInitCheckTimer);
         solutionsTab = document.body.querySelector("[data-layout-path='/ts0/tb2']");
-        console.log(solutionsTab);
-
         solutionsTab.style.display = "none";
       }
     }
