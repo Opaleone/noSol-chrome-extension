@@ -5,8 +5,6 @@ chrome.storage.sync.get(['toggleStore'], function(items) {
 });
 
 toggle.addEventListener('click', async () => {
-  console.log(storeToggle);
-
   switch (storeToggle) {
     case true:
       storeToggle = false;
