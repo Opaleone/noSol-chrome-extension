@@ -21,4 +21,12 @@
   }
 
   window.addEventListener("load", myMain, false);
+
+  chrome.storage.onChanged.addListener((change) => {
+    console.log("ding");
+    storeToggle = change.toggleStore.newValue;
+
+    if (storeToggle) solutionsTab.style.display = "none";
+    else solutionsTab.style.display = "block";
+  })
 })();
