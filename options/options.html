@@ -4,8 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Options</title>
+  <link rel="stylesheet" href="options.css">
 </head>
 <body>
-  <p>Options</p>
+  <h1 id="options-title">noSol</h1>
+  <div id="options-panel">
+    <form id="options-form">
+      <ul id="options-list">
+        <li class="options-item">
+          <label for="timer-length">Timer Length: </label>
+          <input id="timer-length" type="number" value="30">
+        </li>
+        <li class="options-item">
+          <label for="timer-power">Timer Power: </label>
+          <input id="timer-power" type="checkbox" checked>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+  <script src="options.js"></script>
 </body>
 </html>
