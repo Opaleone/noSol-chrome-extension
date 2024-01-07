@@ -1,9 +1,6 @@
 const timerLength = document.body.querySelector("#timer-length");
 const timerPower = document.body.querySelector("#timer-power");
 
-const optionsObj = {
-  timerLength: timerLength.value,
-  timerpower: timerPower.checked
-}
-
-module.exports = optionsObj;
+chrome.storage.sync.set({ timerLength: timerLength.value, timerPower: timerPower.checked }, () => {
+  console.log("Options set in storage!");
+})
