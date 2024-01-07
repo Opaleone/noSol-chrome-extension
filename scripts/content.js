@@ -1,14 +1,21 @@
 (async () => {
+  let timerLength;
+  let timerPower;
   chrome.storage.sync.set({ "toggleStore": true }, () => {
     console.log('Settings Saved!');
   })
   let storeToggle;
-  chrome.storage.sync.get(['toggleStore'], (res) => {
-    storeToggle = res.toggleStore;
+  await chrome.storage.sync.get(null, async (res) => {
+    timerLength = await res.timerLength;
+    timerPower = await res.timerPower;
+    storeToggle = await res.toggleStore;
+
+    console.log(parseInt(timerLength));
+    console.log(timerPower);
   })
   let solutionsTab;
 
-  const myMain = (e) => {
+  const solCheck = (e) => {
     let jsInitCheckTimer = setInterval(checkForSol, 10);
     function checkForSol(e) {
       if (typeof solutionsTab !== 'undefined' || document.body.querySelector("[data-layout-path='/ts0/tb2']")) {
@@ -20,13 +27,12 @@
     }
   }
 
-  window.addEventListener("load", myMain, false);
-
   chrome.storage.onChanged.addListener((change) => {
-    console.log("ding");
     storeToggle = change.toggleStore.newValue;
 
     if (storeToggle) solutionsTab.style.display = "none";
     else solutionsTab.style.display = "block";
   })
+
+  window.addEventListener("load", solCheck, false);
 })();
