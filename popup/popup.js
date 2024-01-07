@@ -1,8 +1,10 @@
 const toggle = document.body.querySelector('.slider');
 let storeToggle;
-chrome.storage.sync.get(['toggleStore'], function(items) {
-  storeToggle = items.toggleStore;
-});
+
+chrome.storage.sync.get(null, (res) => {
+  console.log(res);
+  storeToggle = res.toggleStore;
+})
 
 toggle.addEventListener('click', async () => {
   switch (storeToggle) {
