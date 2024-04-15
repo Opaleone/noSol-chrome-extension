@@ -15,6 +15,17 @@
   })
   let solutionsTab;
 
+  const findSolutions = (element) => {
+    if (element.hasChildNodes()) {
+      element.childNodes.forEach(findSolutions)
+    } else if (element.nodeType === Text.TEXT_NODE && element.textContent === "Solutions") {
+      solutionsTab = element;
+      return;
+    }
+  }
+
+  findSolutions(document.body);
+
   const solCheck = (e) => {
     let jsInitCheckTimer = setInterval(checkForSol, 10);
     function checkForSol(e) {
