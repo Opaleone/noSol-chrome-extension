@@ -2,9 +2,7 @@
   let storeToggle;
   let solutionsTab;
 
-  chrome.storage.sync.set({ "toggleStore": true }, () => {
-    return;
-  })
+  chrome.storage.sync.set({ "toggleStore": true })
   await chrome.storage.sync.get(null, async (res) => {
     storeToggle = await res.toggleStore;
   })
