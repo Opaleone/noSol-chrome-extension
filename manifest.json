@@ -1,7 +1,7 @@
 {
   "name": "noSol",
   "version": "0.1.0",
-  "description": "Removes the solutions tab in LeetCode until timer is complete.",
+  "description": "Removes the solutions tab in LeetCode.",
   "manifest_version": 3,
   "author": "lvarando@gmail.com",
   "permissions": [
