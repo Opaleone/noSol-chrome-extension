@@ -1,6 +1,4 @@
 (async () => {
-  let timerLength;
-  let timerPower;
   let storeToggle;
   let solutionsTab;
 
@@ -8,8 +6,6 @@
     return;
   })
   await chrome.storage.sync.get(null, async (res) => {
-    timerLength = await res.timerLength;
-    timerPower = await res.timerPower;
     storeToggle = await res.toggleStore;
   })
 
