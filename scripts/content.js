@@ -1,10 +1,12 @@
 (async () => {
   let timerLength;
   let timerPower;
+  let storeToggle;
+  let solutionsTab;
+
   chrome.storage.sync.set({ "toggleStore": true }, () => {
     console.log('Settings Saved!');
   })
-  let storeToggle;
   await chrome.storage.sync.get(null, async (res) => {
     timerLength = await res.timerLength;
     timerPower = await res.timerPower;
@@ -13,7 +15,6 @@
     console.log(parseInt(timerLength));
     console.log(timerPower);
   })
-  let solutionsTab;
 
   const findSolutions = (element) => {
     if (element.hasChildNodes()) {
