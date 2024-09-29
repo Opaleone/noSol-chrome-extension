@@ -1,9 +1,13 @@
 const toggle = document.body.querySelector('.slider');
+const slider = document.body.querySelector('#toggle-sol');
 let storeToggle;
 
 chrome.storage.sync.get(null, (res) => {
   console.log(res);
   storeToggle = res.toggleStore;
+
+  if (storeToggle) slider.checked = true;
+  else slider.checked = false;
 })
 
 toggle.addEventListener('click', async () => {
