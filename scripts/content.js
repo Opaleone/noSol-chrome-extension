@@ -1,10 +1,14 @@
 (async () => {
   let storeToggle;
   let solutionsTab;
+  let disabledTime = 30;
+  const minuteConvert = 60*1000
 
-  chrome.storage.sync.set({ "toggleStore": true })
+  chrome.storage.sync.set({ "toggleStore": true });
+  chrome.storage.sync.set({ "cancelDisable": false });
   await chrome.storage.sync.get(null, async (res) => {
     storeToggle = await res.toggleStore;
+    // disabledTime = await res.setDisabledTime;
   })
 
   const solCheck = (e) => {
@@ -26,4 +30,8 @@
   })
 
   window.addEventListener("load", solCheck, false);
+  
+  setTimeout(() => {
+    chrome.storage.sync.set({ "cancelDisable": true });
+  }, disabledTime * minuteConvert)
 })();
